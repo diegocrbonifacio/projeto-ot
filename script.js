@@ -13,8 +13,9 @@ startBtn.addEventListener('click', () => {
 
 stopBtn.addEventListener('click', () => {
   recognition.stop();
-  recognition.removeEventListener('result', onRecognitionResult);
 });
+
+recognition.addEventListener('result', onRecognitionResult);
 
 function onRecognitionResult(event) {
   const transcript = event.results[0][0].transcript;
